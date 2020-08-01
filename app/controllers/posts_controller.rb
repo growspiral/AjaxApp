@@ -4,9 +4,11 @@ class PostsController < ApplicationController
   end
   
   def create
-    P post = Post.create(content: params[:content], checked: false)
+    post = Post.create(content: params[:content], checked: false)
     render json:{ post: post }
   end
+
+
   def checked
   
     post = Post.find(params[:id])
@@ -17,6 +19,7 @@ class PostsController < ApplicationController
     end
 
     item = Post.find(params[:id])
-    render json: { post: item }
+    render json:{ post: item }
   end
+
 end
